@@ -4,8 +4,17 @@ import GrayBtn from '../GrayBtn/GrayBtn';
 import Card from './Card/Card';
 import { products } from '../../products';
 import { categories } from '../../categories';
+import Search from '../../assets/components/Serach/Search';
+import { useState } from 'react';
 
 export default function Catalogy(){
+
+  const [search, setSearch] = useState('');
+  function handleChange(e){
+    setSearch(e.target.value);
+}
+const filtredProducts = products.filter(product => product.name.toLowerCase().includes(search.toLocaleLowerCase()));
+
     return(
       <div className={s.catalogWrapper}> {}
         <div className="container">
@@ -18,16 +27,16 @@ export default function Catalogy(){
               {
                 categories.map(categori => <BlueBtn text={categori.name}/>)
               }
-
-              {/* <BlueBtn text="Все товаы" /> {}
-              <GrayBtn text="Шины/колеса" /> {}
-              <GrayBtn text="Масла" /> {}
-              <GrayBtn text="Ароматизаторы" /> {} */}
             </div>
+
+              <Search handleChange={handleChange} />
 
             <div className={s.cards}>
                 {
-                  products.map(product => <Card id = {product.id} imagePath= {product.imagePath} name={product.name} price = {product.price} />)
+                  filtredProducts.length ?
+                  filtredProducts.map(product => <Card id = {product.id} imagePath= {product.imagePath} name={product.name} price = {product.price} />)
+                  :
+                  <p>Продукт "{search} не найдено"</p>
                 }
                 
             </div>
