@@ -4,7 +4,7 @@
     align-items: center;
     padding: 10px;
     height: 80vh;
-    background-image: url(../../img/Rectangle.png); 
+    background-image: url(src/img/Rectangle.png); 
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;

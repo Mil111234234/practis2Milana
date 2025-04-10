@@ -10,6 +10,7 @@ export default function Header(){
                     <nav className={s.nav}>
                         <NavLink to="/" className={`${s.nav_item} nav_item`}> Главная</NavLink>   
                         <NavLink to="/" className={`${s.nav_item} nav_item`}> Каталог</NavLink>   
+                        <NavLink to="/users" className={`${s.nav_item} nav_item`}> Пользователи</NavLink>  
                     </nav>
                 
                 </div>

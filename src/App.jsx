@@ -5,6 +5,7 @@ import Catalogy from './components/Catalogy/Catalogy';
 import { Route, Routes } from 'react-router-dom';
 import HomePage from './HomePage/HomePage';
 import ProductPage from './assets/ProductPage/ProductPage';
+import UsersPage from './components/UsersPage/UsersPage';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path='/' element={<HomePage/>}></Route>
         <Route path='/catalogWrapper' element={<Catalogy/>}></Route>
         <Route path='/catalogWrapper/:id' element = {<ProductPage/>}></Route>
+        <Route path='/users' element = {<UsersPage/>}></Route>
       </Routes>
       
     </>

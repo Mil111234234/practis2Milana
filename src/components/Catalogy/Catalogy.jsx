@@ -12,6 +12,7 @@ export default function Catalogy(){
   const [search, setSearch] = useState('');
   function handleChange(e){
     setSearch(e.target.value);
+    
 }
 const filtredProducts = products.filter(product => product.name.toLowerCase().includes(search.toLocaleLowerCase()));
 
