@@ -15,8 +15,11 @@ export default function Card(props){
                     <h2>{props.price} P</h2>
                     
                     <Link to={`${props.id}`}>
-                        <BlueBtn text="Добавить в корзину" /> {}
+                        <BlueBtn text="Подробнее" /> {} 
                     </Link>
+                    <br />
+        <br />
+                        <button onClick={props.addToCart}>Добавить в корзину</button>
                 </div>
                 </div>
            

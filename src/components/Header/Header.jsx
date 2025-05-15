@@ -13,6 +13,7 @@ export default function Header(){
                 <NavLink to="/" className={`${s.nav_item} nav_item`}> Главная</NavLink>   
                 <NavLink to="/catalogWrapper" className={`${s.nav_item} nav_item`}> Каталог</NavLink>
                 <NavLink to="/users" className={`${s.nav_item} nav_item`}> Пользователи</NavLink>     
+                <NavLink to="/cart"  className={`${s.nav_item} nav_item`}>Корзина</NavLink>
                 </nav>
                 <img src={Logo} alt="" />
                 <div className={s.nav_btn}>

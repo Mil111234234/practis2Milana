@@ -7,7 +7,7 @@ import { categories } from '../../categories';
 import Search from '../../assets/components/Serach/Search';
 import { useState } from 'react';
 
-export default function Catalogy(){
+export default function Catalogy({cart, setCart}){
 
   const [search, setSearch] = useState('');
   const[sorting, setSorting] = useState(0);
@@ -62,7 +62,7 @@ const sortedAndFiltredProducts = sortProducts(sorting, filtredProducts);
             <div className={s.cards}>
                 {
                   sortedAndFiltredProducts.length ?
-                  sortedAndFiltredProducts.map(product => <Card id = {product.id} imagePath= {product.imagePath} name={product.name} price = {product.price} />)
+                  sortedAndFiltredProducts.map(product => <Card id = {product.id} imagePath= {product.imagePath} name={product.name} price = {product.price} addToCart = {()=> setCart([...cart, product.id])}/>)
                   :
                   <p>Продукт "{search} не найдено"</p>
                 }
